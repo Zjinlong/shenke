@@ -1,0 +1,298 @@
+body {
+  margin: 0;
+}
+
+.headers {
+  background-image: url("../img/topbgimg.png");
+  height: 171px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position-x: 101%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.headBgi {
+  height: 100%;
+  width: 100%;
+}
+
+.headerBox {
+  margin: 100px 0 0 10px;
+}
+
+.title {
+  border: none;
+}
+
+.yhzqUrl {
+  font-family: HiraginoSansGB-W3;
+  font-size: 10px;
+  color: #AEAEAE;
+  letter-spacing: 0.71px;
+  margin-left: 13px;
+}
+
+.contant {
+  font-family: FZZDXJW--GB1-0;
+  font-size: 14px;
+  color: #636363;
+  letter-spacing: 0.8px;
+  line-height: 22px;
+  width: 100%;
+  resize: none;
+}
+
+.conBox dl {
+  display: flex;
+  margin: 7px 0 25px 0;
+}
+
+.conBox dl dt,
+.conBox dl dd {
+  font-size: 12px;
+  color: #191919;
+  letter-spacing: 0.43px;
+  -webkit-margin-start: 0px;
+}
+
+.conBox dl dt {
+  margin-right: 10px;
+}
+
+.content1 {
+  position: relative;
+  margin: 0 22px 0 23px;
+  box-shadow: 0 2px 9px 5px rgba(143, 160, 167, 0.14);
+  border-radius: 8px;
+}
+
+.title {
+  font-family: FZZDXJW--GB1-0;
+  font-size: 14px;
+  color: #4C4C4C;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+  margin: 15px 0 0 13px;
+  background: none;
+  display: block;
+}
+
+.conBox {
+  height: 400px;
+  background: #ffffff;
+  border: 1px solid #ffffff;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.conBox h4 {
+  font-family: FZZCHJW--GB1-0;
+  font-size: 16px;
+  color: #191818;
+  letter-spacing: 1.14px;
+  line-height: 22px;
+  margin: 0px 0 16px 0;
+}
+
+.conBox .h4 {
+  font-size: 16px;
+  color: #191818;
+  letter-spacing: 1.14px;
+  line-height: 22px;
+  padding: 0;
+  /* height: 50px; */
+  /* margin: 10px 0 0 0; */
+  width: 100%;
+  font-weight: 900;
+  resize: none;
+}
+
+.screenBtn {
+  margin-top: -23px;
+  display: block;
+}
+
+.toolbarBox {
+  width: 414px;
+}
+
+.testimg {
+  width: 100%;
+  height: 180px;
+  margin-top: 16px;
+  /* opacity:1; */
+  /* margin:-1px; */
+}
+
+.footer {
+  background-image: url("../img/bottombgimg.png");
+  height: 172px;
+  background-repeat: no-repeat;
+  background-size: 81%;
+  width: 100%;
+  overflow: hidden;
+  z-index: -1;
+  margin: -10% 0 0 0;
+}
+
+.footerBox {
+  position: absolute;
+  bottom: 5px;
+  right: 22px;
+}
+
+.sum {
+  font-family: HiraginoSansGB-W3;
+  font-size: 10px;
+  color: #AEAEAE;
+  letter-spacing: 0.71px;
+  margin-bottom: 4px;
+  width: 100px;
+  border: none;
+}
+
+.wechat {
+  font-family: HiraginoSansGB-W3;
+  letter-spacing: 0.86px;
+  margin-left: 4px;
+  font-size: 12px;
+  color: #AEAEAE;
+  text-align: center;
+}
+
+.wechatImgBox {
+  text-align: center;
+}
+
+.wechatImgcss {
+  width: 70px;
+  height: 70px;
+}
+
+.editor {
+  margin: 0 auto;
+  position: relative;
+  z-index: 0;
+}
+
+.toolbar {
+  border: 1px solid #ccc;
+}
+
+.text {
+  border: 1px solid #ccc;
+  /* height: 210px; */
+  /* margin-top: -5px; */
+}
+
+.text .w-e-text {
+  overflow-y: auto;
+  font-size: 14px;
+  color: #636363;
+  letter-spacing: 0.85px;
+  line-height: 22px;
+  padding: 0;
+  margin-top: -5px;
+}
+
+.editor .w-e-toolbar .w-e-menu {
+  padding: 0 4px;
+}
+
+.editor .w-e-toolbar {
+  flex-wrap: wrap;
+}
+
+#btn1 {
+  border: none;
+  background: rgb(52, 207, 255);
+  border-radius: 15px;
+  padding: 0px 5px;
+}
+
+.text .w-e-text p {
+  margin: 0;
+  /* height: 200px; */
+  /* text-align: center; */
+}
+
+.w-e-text p img,
+.w-e-text img {
+  width: 200px;
+  height: 200px;
+}
+
+@media (max-width:1024px) {
+
+  .headers,
+  .footer {
+    height: 278px;
+  }
+
+  .headerBox {
+    margin-top: 110px;
+  }
+
+  .conBox {
+    height: 370px;
+  }
+
+  .testimg {
+    height: 220px;
+  }
+}
+
+@media (max-width:414px) {
+
+  .headers,
+  .footer {
+    height: 186px;
+  }
+
+  .headerBox {
+    margin-top: 80px;
+  }
+
+  .conBox {
+    height: 371px;
+  }
+
+  .conBox h4 {
+    margin: 0 0 16px 0;
+  }
+
+  .testimg {
+    height: 178px;
+  }
+}
+
+@media (max-width:375px) {
+
+  .headers,
+  .footer {
+    height: 150px;
+  }
+
+  .footer {
+    background-size: 71%;
+    margin: -5% 0 0 0;
+  }
+
+  .headerBox {
+    margin-top: 75px;
+  }
+
+  .conBox {
+    height: 352px;
+  }
+
+  .conBox h4 {
+    margin: 15px 0 10px 0;
+  }
+
+  .testimg {
+    height: 166px;
+    margin-top: 10px;
+  }
+}

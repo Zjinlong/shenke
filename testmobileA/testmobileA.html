@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0">
+    <title>html2canvas example</title>
+    <link rel="stylesheet" href="./css/testmobile.css">
+    <script type="text/javascript" src="./js/html2cavas.js"></script>
+    <script type="text/javascript" src="./js/wangEditor.js"></script>
+</head>
+
+<body>
+    <div class="testmobileA" id="capture">
+        <div class="headers">
+            <!-- <img class="headBgi" src="../../../static/img/topbgimg.png"> -->
+            <div class="headerBox">
+                <img onclick="downloadImg()" class="headlogo" src="./img/yhlogo.png">
+                <!-- <img onclick="downloadImg()" class="headlogo" src=""> -->
+                <input class="title" type="text" value="title">
+                <div class="yhzqUrl">www.chinastock.com.cn/www.yhzqjj.com</div>
+            </div>
+        </div>
+        <div class="content1">
+            <div class="conBox">
+                <dl>
+                    <dt id="pubdate"></dt>
+                    <dd id="week"></dd>
+                </dl>
+                <input id="btn1" class="screenBtn" type="button" value="截图" onclick="takeScreenshot()">
+                <!-- <editor-bar class="contant" v-model="detail" :isClear="isClear" @change="change"></editor-bar> -->
+                <div class="editor">
+                    <textarea class="h4" type="text"></textarea>
+                    <!-- <h4 class="h4" v-else="isText?true:false" :style="textCss">{{abstract}}</h4> -->
+                    <!-- <input class="h4" type="text" :style="textCss" :value="abstract"> -->
+                    <div id="div1" class="toolbar">
+                    </div>
+                    <div id="div2" class="text">
+                        <!-- <p>第一个 demo（菜单和编辑器区域分开）</p> -->
+                    </div>
+                    <img class="testimg" src="./img/test.png" alt="">
+                    <!-- <img class="testimg" src="http://www.yhzqjj.com/api/newsflash/img/test.png" alt=""> -->
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="footerBox">
+                <input class="sum" type="text" value="银基研2020-001">
+                <!-- <div class="sum" v-else @click="sumTextBtn()">{{sumText}}</div> -->
+                <div class="wechatImgBox">
+                    <img class="wechatImgcss" src="./img/wechatImg.png">
+                </div>
+                <div class="wechat">微信公众号</div>
+            </div>
+        </div>
+        <!-- <img :src="imgUrl" alt="" crossorigin="anonymous"> -->
+    </div>
+    <script type="text/javascript">
+        var div1 = document.getElementById('div1');
+        var toolbar = document.getElementsByClassName("toolbar");
+        var h4 = document.getElementsByClassName("h4");
+        var text = document.getElementsByClassName("text");
+        var screenBtn = document.getElementsByClassName("screenBtn");
+        var testimg = document.getElementsByClassName("testimg");
+       
+        console.log(testimg)
+
+        function getDay() {
+            var pubdate = document.getElementById("pubdate")
+            var week = document.getElementById("week")
+            var myDate = new Date(); //获取当前时间
+            var y = myDate.getFullYear(); //获取当前年份的日期
+            var m = myDate.getMonth() + 1; //获取当前月份的日期
+            this.day = myDate.getDate(); //获取当天的日期
+            m = parseInt(m, 10);
+            if (m < 10) {
+                m = "0" + m;
+            }
+            this.day = parseInt(this.day, 10);
+            if (this.day < 10) {
+                this.day = "0" + this.day;
+            }
+            var dates = y + "-" + m + "-" + this.day;
+            var weeks = new Array(
+                "星期日",
+                "星期一",
+                "星期二",
+                "星期三",
+                "星期四",
+                "星期五",
+                "星期六"
+            );
+            var time = weeks[myDate.getDay()];
+            var weeks = time;
+            pubdate.innerHTML = dates
+            week.innerHTML = weeks
+            // console.log(dates, weeks)
+        }
+        getDay();
+        // 表格
+        var E = window.wangEditor
+        var editor1 = new E('#div1', '#div2')
+        editor1.customConfig.menus = [ //菜单配置，不要可以直接去掉这个默认全部功能都有如下图
+            "head", // 标题
+            "bold", // 粗体
+            "fontSize", // 字号
+            "fontName", // 字体
+            "italic", // 斜体
+            "underline", // 下划线
+            "strikeThrough", // 删除线
+            "foreColor", // 文字颜色
+            "backColor", // 背景颜色
+            "link", // 插入链接
+            "list", // 列表
+            "justify", // 对齐方式
+            "quote", // 引用
+            "emoticon", // 表情
+            "table", // 表格
+            "video", // 插入视频
+            "code", // 插入代码
+            "undo", // 撤销
+            "redo", // 重复
+            "fullscreen" // 全屏
+        ]
+        editor1.create()
+        // var editor2 = new E('#div3')
+        // editor2.create()
+        // document.body.removeChild("w-e-img7748250310957114");
+        // 转图片
+        function takeScreenshot() {
+            if (h4["0"].style.border != "none") {
+                h4["0"].style.border = "none";
+                text.div2.style.border = "none"; // 去掉文本框边框screenBtn["0"].style.backgroundColor
+                toolbar["0"].style.display = "none";
+                screenBtn["0"].style.backgroundColor = "#fff";
+                screenBtn["0"].style.border = "none";
+                screenBtn["0"].style.color = "#fff";
+                var testimg = document.getElementsByClassName("testimg");
+                // if (testimg) {
+                //     testimg["0"].style.marginTop = "-100px";
+                // } else {
+                //     // testimg["0"].style.marginTop = "0";
+                // }
+            } else {
+                var ccc = "1px solid #ccc"
+                h4["0"].style.border = ccc;
+                text.div2.style.border = ccc; // 去掉文本框边框screenBtn["0"].style.backgroundColor
+                toolbar["0"].style.display = "flex";
+                // screenBtn["0"].style.backgroundColor="#fff";
+                screenBtn["0"].style =
+                    " border: none;background: rgb(52, 207, 255);border-radius: 15px;padding: 0px 5px;";
+                screenBtn["0"].style.color = "#000";
+                var testimg = document.getElementsByClassName("testimg");
+                // if (testimg) {
+                //     testimg["0"].style.marginTop = "-100px";
+                // } else {
+                //     testimg["0"].style.marginTop = "0";
+                // }
+            }
+            html2canvas(document.querySelector("#capture"), {
+                width: 414,
+                scale: 1,
+            }).then(canvas => {
+                // document.body.appendChild(canvas)
+                let dataURL = canvas.toDataURL("image/png");
+                console.log(canvas.toDataURL())
+                test = dataURL;
+                // console.log(dataURL)
+            });
+           
+        }
+        // 下图片
+        function downloadImg() {
+            var a = document.createElement("a"); // 生成一个a元素
+            var event = new MouseEvent("click"); // 创建一个单击事件
+            a.download = name || "photo"; // 设置图片名称
+            a.href = test; // 将生成的URL设置为a.href属性
+            a.dispatchEvent(event); // 触发a的单击事件
+        }
+    </script>
+</body>
+
+</html>
